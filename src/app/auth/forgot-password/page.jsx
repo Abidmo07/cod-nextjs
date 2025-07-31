@@ -48,7 +48,7 @@ const handleSubmit=async(e)=>{
 
         <p className="text-center text-sm text-gray-600 mt-6">
           Remember your password?{' '}
-          <a href="/admin/auth/login" className="text-indigo-600 font-medium hover:underline">
+          <a href="/auth/login" className="text-indigo-600 font-medium hover:underline">
             Back to Login
           </a>
         </p>

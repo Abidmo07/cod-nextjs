@@ -20,7 +20,7 @@ export default function regiter() {
       .then((response) => {
         console.log("Registration successful:", response.data);
         // Redirect to login or home page
-        router.push("/admin/auth/email-verify");
+        router.push("/auth/email-verify");
       })
       .catch((error) => {
         console.error(
@@ -116,7 +116,7 @@ export default function regiter() {
         <p className="text-center text-sm text-gray-600 mt-6">
           Already have an account?{" "}
           <Link
-            href={"/admin/auth/login"}
+            href={"/auth/login"}
             className="text-indigo-600 font-medium hover:underline"
           >
             Log in

@@ -23,7 +23,7 @@ export default function ResetPassword() {
       })
       .then((response) => {
         console.log("Password reset successful:", response.data);
-        router.push("/admin/auth/login");
+        router.push("/auth/login");
       })
       .catch((error) => {
         console.error("Password reset failed:", error);
@@ -89,7 +89,7 @@ export default function ResetPassword() {
 
         <p className="text-center text-sm text-gray-600 mt-6">
           Back to{' '}
-          <a href="/admin/auth/login" className="text-indigo-600 font-medium hover:underline">
+          <a href="/auth/login" className="text-indigo-600 font-medium hover:underline">
             Login
           </a>
         </p>
