@@ -43,7 +43,7 @@ export default function AboutUsPage() {
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
             <img
-              src="/images/about-story.jpg"
+              src="/team.jpg"
               alt="قصتنا"
               className="w-full h-96 object-cover transition-transform duration-300 hover:scale-105"
               loading="lazy"
