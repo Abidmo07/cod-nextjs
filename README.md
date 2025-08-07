@@ -34,8 +34,8 @@ This is the **frontend** for the Laravel-based eCommerce platform, built using *
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ecommerce-nextjs.git
-cd ecommerce-nextjs
+git clone https://github.com/Abidmo07/cod-nextjs.git
+cd cid-nextj
 ```
 ### 2. Install Dependencies
 ```bash
