@@ -292,21 +292,9 @@ export default function OrdersPage() {
                           {" "}
                           {/* Reduced px */}
                           <div className="flex items-center justify-end space-x-3 space-x-reverse">
-                            <Link
-                              href={`/admin/orders/${order.id}`}
-                              title="عرض تفاصيل الطلب"
-                              className="text-indigo-600 hover:text-indigo-800 p-2 rounded-full hover:bg-indigo-50 transition-all duration-200"
-                            >
-                              <FaEye size={20} />
-                            </Link>
+                         
 
-                            <Link
-                              href={`/admin/orders/${order.id}/edit`}
-                              title="تحرير الطلب"
-                              className="text-green-600 hover:text-green-800 p-2 rounded-full hover:bg-green-50 transition-all duration-200"
-                            >
-                              <FaEdit size={20} />
-                            </Link>
+                     
 
                             <button
                               onClick={() => deleteOrder(order.id)}
