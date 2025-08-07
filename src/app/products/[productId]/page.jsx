@@ -76,7 +76,7 @@ export default function ProductDetails() {
     apiClient.post("api/order", orderData)
       .then((res) => {
         console.log(res.data.order.id);
-         router.push(`/order/${res.data.order.id}`); 
+         router.push(`/orders/${res.data.order.id}`); 
         
       })
       .catch(console.error);

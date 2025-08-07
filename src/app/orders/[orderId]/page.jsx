@@ -52,7 +52,7 @@ useEffect(() => {
    
  }
 
-}, [order, wilaya]);  // ← re-run whenever `order` or `wilayas` change
+}, [order, wilaya]);  
 
  
 

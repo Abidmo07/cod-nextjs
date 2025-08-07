@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import apiClient from './axios'; // Ensure this path is correct for your project
+import Link from 'next/link';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -39,16 +40,11 @@ export default function Home() {
           
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-8 space-x-reverse">
-            {['الرئيسية', 'التصنيفات', 'المنتجات', 'العروض', 'اتصل بنا'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item === 'الرئيسية' ? 'hero' : item.toLowerCase()}`} 
-                className="relative group py-2"
-              >
-                <span className="text-gray-300 group-hover:text-white transition-colors">{item}</span>
-                <span className="absolute bottom-0 right-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
+            <a href="/" className="text-gray-300 hover:text-white">الرئيسية</a>
+            <a href="/products" className="text-gray-300 hover:text-white">منتجاتنا</a>
+            <a href="/categories" className="text-gray-300 hover:text-white">التصنيفات</a>
+            <a href="/about" className="text-gray-300 hover:text-white">عن المتجر</a>
+            <a href="/contact" className="text-gray-300 hover:text-white">تواصل معنا</a>
           </nav>
           
           {/* Mobile Menu Button */}
@@ -80,38 +76,16 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="#products"
+                href="/products"
                 className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold rounded-xl shadow-lg hover:shadow-yellow-500/20 transition-all transform hover:-translate-y-1 text-center"
               >
                 تسوق الآن
               </a>
-              <a
-                href="#"
-                className="px-8 py-4 bg-transparent border-2 border-gray-700 text-white font-bold rounded-xl hover:border-white transition-colors text-center"
-              >
-                مشاهدة العروض
-              </a>
+           
             </div>
           </div>
           
-          {/* Hero Image */}
-          <div className="relative">
-            <div className="relative z-10 rounded-3xl overflow-hidden border-8 border-white/10 backdrop-blur-sm shadow-2xl">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-purple-500 rounded-2xl blur opacity-30 animate-pulse"></div>
-                  <img
-                    src="/watch-hero.png" // Make sure this path is correct
-                    alt="ساعة فاخرة"
-                    className="relative w-80 h-auto object-contain filter drop-shadow-2xl"
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-500 rounded-full mix-blend-soft-light filter blur-2xl opacity-30"></div>
-            <div className="absolute -top-6 -right-6 w-40 h-40 bg-yellow-500 rounded-full mix-blend-soft-light filter blur-2xl opacity-20"></div>
-          </div>
+   
         </div>
       </section>
 
@@ -132,7 +106,8 @@ export default function Home() {
           {/* Changed grid layout to lg:grid-cols-4 for better spacing with new card design */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {categories.map((category) => (
-              <div 
+              <Link
+                href={`/categories/${category.id}`} 
                 key={category.id} 
                 className="group relative bg-gray-850/90 rounded-2xl p-6 border border-gray-700 shadow-xl hover:shadow-yellow-500/20 transition-all duration-300 transform hover:-translate-y-2"
               >
@@ -150,7 +125,7 @@ export default function Home() {
                 <h3 className="text-center font-bold text-lg group-hover:text-yellow-400 transition-colors">
                   {category.name}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -169,7 +144,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
+            {  products.slice(0,3).map((product) => (
               <div 
                 key={product.id} 
                 className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden border border-gray-700 hover:border-yellow-400/30 transition-all duration-300"
@@ -211,7 +186,7 @@ export default function Home() {
           
           <div className="text-center mt-12">
             <a 
-              href="#"
+              href="/products"
               className="inline-flex items-center px-6 py-3 border-2 border-gray-700 text-white rounded-xl hover:border-yellow-400 transition-colors"
             >
               تصفح جميع المنتجات
@@ -261,15 +236,7 @@ export default function Home() {
               <p className="text-gray-400 mb-6">
                 متجر متخصص في بيع الساعات والأكسسوارات الفاخرة بجودة عالية
               </p>
-              <div className="flex space-x-4">
-                {/* Placeholder social icons */}
-                {[1,2,3,4].map((i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-400 hover:text-gray-900 transition-colors">
-                    <span className="sr-only">Social media link {i}</span>
-                    {/* Add actual social icons here */}
-                  </a>
-                ))}
-              </div>
+            
             </div>
             
             {/* Footer Column 2: Links */}
